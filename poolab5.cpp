@@ -9,7 +9,7 @@ protected:
     int varsta;
 
 public:
-    Persoana(string nume, int varsta) {  // Corectăm tipul de variabilă
+    Persoana(string nume, int varsta) {  
         this->nume = nume;
         this->varsta = varsta;
     }
@@ -21,22 +21,22 @@ public:
 
 class Student : public Persoana {
 private:
-    float medie;  // Declarăm variabila medie
+    float medie;  
 
 public:
-    Student(string nume, int varsta, float medie) : Persoana(nume, varsta) {  // Constructor public
+    Student(string nume, int varsta, float medie) : Persoana(nume, varsta) {  
         this->medie = medie;
     }
 
     void afiseazaInformatii() {
-        cout << "Nume: " << nume << ", Varsta: " << varsta << ", Medie: " << medie << endl;  // Corectăm sintaxa
+        cout << "Nume: " << nume << ", Varsta: " << varsta << ", Medie: " << medie << endl; 
     }
 
-    float getMedie() const {  // Adăugăm getter pentru medie
+    float getMedie() const {  
         return medie;
     }
 
-    void setMedie(float nouaMedie) {  // Adăugăm setter pentru medie
+    void setMedie(float nouaMedie) {  
         medie = nouaMedie;
     }
 };
@@ -45,7 +45,7 @@ class Admin {
 public:
     void modificMedie(Student& s, float nouaMedie) {
         cout << "Modific media pentru: " << s.getMedie() << " la " << nouaMedie << endl;
-        s.setMedie(nouaMedie);  // Modificăm media prin setter
+        s.setMedie(nouaMedie);  
     }
 
     void afiseazaDetaliistudent(const Student& s) {
@@ -61,7 +61,7 @@ int main() {
     s2.afiseazaInformatii();
 
     Admin admin;
-    admin.modificMedie(s2, 5);  // Modificăm media
+    admin.modificMedie(s2, 5);  
     admin.afiseazaDetaliistudent(s2);
 
     return 0;
